@@ -1,6 +1,7 @@
 # Vulnerable-Analysis
-Degree Cybersecurity
+Hello! My name is Muhammad Iqbal Bin Ruslan and this is my repository
 
+Bachelor of Information Technology (Hons) in Computer System Security
 
 
 | No |                                  Scenario                                                         |   Category  | Reasoning |
