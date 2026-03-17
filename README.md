@@ -1,5 +1,5 @@
 # Vulnerable-Analysis
-Hello! My name is Muhammad Iqbal Bin Ruslan and this is my repository
+Hello! My name is Muhammad Iqbal Bin Ruslan and this is my repository for this subject!
 
 Bachelor of Information Technology (Hons) in Computer System Security
 
