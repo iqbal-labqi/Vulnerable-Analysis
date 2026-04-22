@@ -64,7 +64,6 @@ Using the gobuster again to find the file with .ticket extension
 gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u 10.48.140.232/island/2100 -x .ticket
 
 <img width="975" height="429" alt="image" src="https://github.com/user-attachments/assets/494838af-39b9-4f9d-8096-2ec738a35259" />
-<img width="975" height="429" alt="image" src="https://github.com/user-attachments/assets/81112c9c-3964-41cb-a68c-3f53562e58bc" />
 <img width="975" height="94" alt="image" src="https://github.com/user-attachments/assets/78c0473a-a9e6-45fb-b7c4-dddd7f9378cf" />
 
 http://10.48.140.232/island/2100/green_arrow.ticket
