@@ -1,4 +1,4 @@
-**Recon**
+***Recon***
 
 Deployed IP: 10.49.172.132
 
@@ -10,7 +10,10 @@ Check connection: ping 10.48.140.232
 
 Scan for the target machine: nmap 10.48.140.232
 
-**Scanning**
+
+
+
+***Scanning***
 
 Find open port: nmap -sC -sV -vv 10.48.140.232
 
@@ -24,7 +27,11 @@ Port 22/tcp - ssh - OpenSSH 6.7p1 Debian 5+deb8u8 (protocol 2.0)
 Port 80/tcp - http - Apache httpd
 Port 111/tcp - rpcbind 2-4 (RPC #100000)
 
-**Gaining Access**
+
+
+
+
+***Gaining Access***
 
 My first thought is to go to the website of the IP
 
@@ -36,7 +43,7 @@ gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u 
 <img width="975" height="397" alt="image" src="https://github.com/user-attachments/assets/c41ad69e-c693-4914-a0fa-51ce1c667700" />
 
 http:// 10.48.140.232/island
-Clue: vigilante
+*Clue: vigilante*
 
 <img width="975" height="213" alt="image" src="https://github.com/user-attachments/assets/98ea4309-6d35-4d84-bc98-cddd2c16874f" />
 
@@ -69,7 +76,7 @@ I acquire this hash, and use cyberchef to encode it
 <img width="975" height="426" alt="image" src="https://github.com/user-attachments/assets/1b00c977-0ece-4de6-8596-d6606f9fb810" />
 
 Out of all Base number, ONLY Base58 showing a make sense result. Others just random gibberish 
-Base58: !#th3h00d
+*Base58: !#th3h00d*
 
 <img width="975" height="101" alt="image" src="https://github.com/user-attachments/assets/67ff583c-458e-4a0b-b260-c8f19ddebedc" />
 
@@ -82,7 +89,7 @@ password: !#th3h00d
 
 Using ls command, we can list down all the file in the system. We have Leave_me_alone.png, Queen’s_Gambit.png, aa.jpg. A bit exploration and we could see there is another user, slade
 
-Clue: slade
+*Clue: slade*
 
 <img width="975" height="262" alt="image" src="https://github.com/user-attachments/assets/4760d5bc-4166-496b-bc09-2268a8794d6d" />
 
@@ -115,7 +122,7 @@ And from here we can run steghide to find hidden files inside the remaining pict
 <img width="975" height="626" alt="image" src="https://github.com/user-attachments/assets/59b2de44-1500-4928-b5bc-be0e9119e86c" />
 
 Nothing worth looking inside passwd.txt. But we acquire the SSH password inside ‘shado’
-Clue: M3tahuman
+*Clue: M3tahuman*
 
 <img width="975" height="94" alt="image" src="https://github.com/user-attachments/assets/cc321969-8581-467b-a4d6-eee916ea4de3" />
 
@@ -131,7 +138,11 @@ THM{P30P7E_K33P_53CRET5__C0MPUT3R5_D0N'T }
 
 <img width="975" height="97" alt="image" src="https://github.com/user-attachments/assets/925a71ce-388b-4622-80a2-54c1c9d814d1" />
 
-**Escalate Privileges**
+
+
+
+
+***Escalate Privileges***
 
 Next step is to find the root.
 <img width="975" height="556" alt="image" src="https://github.com/user-attachments/assets/3c2215fe-6072-4ba9-b261-793bbec14921" />
@@ -147,7 +158,12 @@ THM{MY_W0RD_I5_MY_B0ND_IF_I_ACC3PT_YOUR_CONTRACT_THEN_IT_WILL_BE_COMPL3TED_OR_I'
 **Maintaining Access**
 ----
 
-**Clear tracks**
+
+
+
+
+
+***Clear tracks***
 <img width="975" height="334" alt="image" src="https://github.com/user-attachments/assets/a5969a6b-befd-463f-83f0-60c131aae355" />
 
 Exit the SSH
