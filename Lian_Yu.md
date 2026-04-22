@@ -22,10 +22,10 @@ Find open port: nmap -sC -sV -vv 10.48.140.232
 <img width="975" height="380" alt="image" src="https://github.com/user-attachments/assets/c378487c-554b-433f-a08d-f253c1bdc660" />
 
 Found 4 open port:
-Port 21/tcp - FTP - vsftpd 3.0.2
-Port 22/tcp - ssh - OpenSSH 6.7p1 Debian 5+deb8u8 (protocol 2.0)
-Port 80/tcp - http - Apache httpd
-Port 111/tcp - rpcbind 2-4 (RPC #100000)
+1. Port 21/tcp - FTP - vsftpd 3.0.2
+2. Port 22/tcp - ssh - OpenSSH 6.7p1 Debian 5+deb8u8 (protocol 2.0)
+3. Port 80/tcp - http - Apache httpd
+4. Port 111/tcp - rpcbind 2-4 (RPC #100000)
 
 
 
