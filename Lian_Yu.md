@@ -1,5 +1,5 @@
 ***Recon***
-
+--------
 Deployed IP: 10.49.172.132
 
 <img width="975" height="135" alt="image" src="https://github.com/user-attachments/assets/c390b19d-f6d6-41ea-acec-5500650203be" />
@@ -14,7 +14,7 @@ Scan for the target machine: nmap 10.48.140.232
 
 
 ***Scanning***
-
+--------
 Find open port: nmap -sC -sV -vv 10.48.140.232
 
 <img width="975" height="111" alt="image" src="https://github.com/user-attachments/assets/d446d815-bd5d-43e6-9a4e-28594475ecd3" />
@@ -32,7 +32,7 @@ Found 4 open port:
 
 
 ***Gaining Access***
-
+--------
 My first thought is to go to the website of the IP
 
 <img width="975" height="487" alt="image" src="https://github.com/user-attachments/assets/34b9d92c-378f-42b6-947c-269d949ce100" />
@@ -142,7 +142,7 @@ THM{P30P7E_K33P_53CRET5__C0MPUT3R5_D0N'T }
 
 
 ***Escalate Privileges***
-
+--------
 Next step is to find the root.
 <img width="975" height="556" alt="image" src="https://github.com/user-attachments/assets/3c2215fe-6072-4ba9-b261-793bbec14921" />
 
@@ -155,7 +155,7 @@ THM{MY_W0RD_I5_MY_B0ND_IF_I_ACC3PT_YOUR_CONTRACT_THEN_IT_WILL_BE_COMPL3TED_OR_I'
 <img width="975" height="104" alt="image" src="https://github.com/user-attachments/assets/6f4935d7-a381-4ac5-9ee4-ac49becbc53a" />
 
 ***Maintaining Access***
-
+--------
 Maintain...
 
 
@@ -164,6 +164,7 @@ Maintain...
 
 
 ***Clear tracks***
+--------
 <img width="975" height="334" alt="image" src="https://github.com/user-attachments/assets/a5969a6b-befd-463f-83f0-60c131aae355" />
 
 Exit the SSH
