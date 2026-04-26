@@ -115,8 +115,7 @@ Upload to your nessus (Network_Scan.nessus) and analyse the files. Focus on crit
 
 <img width="945" height="254" alt="image" src="https://github.com/user-attachments/assets/a51718a7-7f5d-4646-bed0-6e85f3995b72" />
 
-^
-|
+^| Nessus interface
 
 1.	What is the affected Port number
     8009
