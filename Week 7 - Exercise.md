@@ -81,5 +81,7 @@ Questions:
    5.  What should be the remediation?
       - Upgrade or remove vsftpd 2.3.4 entirely
       - Patch Windows
- 	   - Disable unused ports
-	   - Update Apache & SSH
+ 	  - Disable unused ports
+	  - Update Apache & SSH
+     
+    
