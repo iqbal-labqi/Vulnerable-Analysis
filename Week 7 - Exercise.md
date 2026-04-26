@@ -30,7 +30,7 @@ Port | State | Service | Version
 ---------------------------------
 80/tcp | open | http | Apache 2.2.8
 ---------------------------------
-139/tcp | open | netbios-ssn |
+139/tcp | open | netbios-ssn | ddad
 ---------------------------------
 445/tcp | open | microsoft-ds | Windows 7 Professional 7601 Service Pack 1
 ---------------------------------
