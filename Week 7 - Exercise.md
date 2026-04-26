@@ -25,14 +25,19 @@ Based on my observation, i noticed an unusual port which is **port 4444**. Port 
 
 <img width="1001" height="829" alt="image" src="https://github.com/user-attachments/assets/0213f31f-6585-4ee9-a341-f1ee3ecdfa69" />
 
-Scroll around, Found global_thermonuclear_war.gamerules.txt
+Scroll around, Found global_thermonuclear_war.gamerules.txt. Based on my experience, CTF sometime hide the flag inside txt file, so this might be the clue
 
 <img width="1917" height="1021" alt="image" src="https://github.com/user-attachments/assets/49ca98ea-5e82-4ab1-8698-a29b974e663f" />
+
+https://tinyurl.com/yr5zprz4
 
 From there, i see a link and decide to use my chrome to search for it
 
 <img width="1012" height="411" alt="image" src="https://github.com/user-attachments/assets/fe9f248f-8641-4efb-a80d-ac59b3012a1e" />
 
+The is some kind of cipher. So i use google lens to find what cipher it using.
+
+*TIC-TAC-TOE CODE from Club Penguin*
 
 <img width="540" height="1206" alt="WhatsApp Image 2026-04-27 at 02 18 40" src="https://github.com/user-attachments/assets/743c2692-addd-4c73-a09a-547f28e6df59" />
 
