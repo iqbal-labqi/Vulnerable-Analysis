@@ -22,7 +22,7 @@ ____________________________
 <h1>Question 3: Interpret an Nmap Output</h1>
 ______________________
 
-|Port    | State | Service      | Version
+|Port    | State | Service      | Version                                  |
 ---------------------------------
 21/tcp  | open   | ftp          | vsftpd 2.3.4
 ---------------------------------
