@@ -19,6 +19,27 @@ The flag is SUCTF2023{ai_is_cool}
 <h1>Question 2: Analyse packet2.pcap and find the flag.</h1>
 ____________________________
 
+Different from the first exercise, ICMP is repetitive, no anomaly, and i conclude ICMP is not where the flag is. Then, i moved on to the TCP based communication.
+
+Based on my observation, i noticed an unusual port which is **port 4444**. Port 4444 commonly associate as the default listener for the Metasploit Framework's reverse shells and payloads.
+
+<img width="1001" height="829" alt="image" src="https://github.com/user-attachments/assets/0213f31f-6585-4ee9-a341-f1ee3ecdfa69" />
+
+Scroll around, Found global_thermonuclear_war.gamerules.txt
+
+<img width="1917" height="1021" alt="image" src="https://github.com/user-attachments/assets/49ca98ea-5e82-4ab1-8698-a29b974e663f" />
+
+From there, i see a link and decide to use my chrome to search for it
+
+<img width="1012" height="411" alt="image" src="https://github.com/user-attachments/assets/fe9f248f-8641-4efb-a80d-ac59b3012a1e" />
+
+
+<img width="540" height="1206" alt="WhatsApp Image 2026-04-27 at 02 18 40" src="https://github.com/user-attachments/assets/743c2692-addd-4c73-a09a-547f28e6df59" />
+
+The flag is: EXMACHINAAVA
+
+
+
 <h1>Question 3: Interpret an Nmap Output</h1>
 ______________________
 
