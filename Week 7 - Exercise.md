@@ -88,5 +88,47 @@ Questions:
 <h1>Question 4: Identify the OS (OS Fingerprinting) - TTL</h1>
 ____________________________
 
+*Image 1*
+<img width="794" height="278" alt="image" src="https://github.com/user-attachments/assets/717eb5b8-17f1-4210-946f-d24ee4c53ebf" />
+
+Answer: Linux
+
+*Image 2*
+<img width="440" height="301" alt="image" src="https://github.com/user-attachments/assets/c1dacc11-cbe4-4257-9779-8572ab89f428" />
+
+Answer: Networking equipment
+
+*Image 3*
+<img width="810" height="186" alt="image" src="https://github.com/user-attachments/assets/1154c373-d3ee-4d5c-acf6-d51ce2dfc255" />
+
+Answer: Windows
 
 
+<h1>Question 5: Analyse the Nessus file</h1>
+______________________
+
+Upload to your nessus (Network_Scan.nessus) and analyse the files. Focus on critical or high findings that was identifies in analysis named “Ghostcat”.
+
+<img width="945" height="401" alt="image" src="https://github.com/user-attachments/assets/6ec500a0-2fc6-4a8a-ad6f-36d2cd583c16" />
+
+<img width="945" height="502" alt="image" src="https://github.com/user-attachments/assets/0805a935-d6ca-4f90-9fe3-19ddceae3afe" />
+
+<img width="945" height="254" alt="image" src="https://github.com/user-attachments/assets/a51718a7-7f5d-4646-bed0-6e85f3995b72" />
+
+^
+|
+
+1.	What is the affected Port number
+    8009
+
+2.	What is the Affected protocol
+	TCP AJP protocol
+
+3.	What is the CVSS Score of vulnerability found
+	9.8
+
+4.	Can you find any exploit related to this vulnerability?
+	<img width="516" height="331" alt="image" src="https://github.com/user-attachments/assets/14243dbe-b04b-48a6-b8dc-3c1ffe9de3a2" />
+
+5. Find CVE for this vulnerability.
+	CVE-2020-1938, CVE-2020-1745
