@@ -22,15 +22,15 @@ ____________________________
 <h1>Question 3: Interpret an Nmap Output</h1>
 ______________________
 
-Port | State | Service | Version
+|Port    | State | Service      | Version
 ---------------------------------
-21/tcp | open | ftp | vsftpd 2.3.4
+21/tcp  | open   | ftp          | vsftpd 2.3.4
 ---------------------------------
-22/tcp | open | ssh	| OpenSSH 5.3p1
+22/tcp  | open   | ssh	         | OpenSSH 5.3p1
 ---------------------------------
-80/tcp | open | http | Apache 2.2.8
+80/tcp  | open   | http         | Apache 2.2.8
 ---------------------------------
-139/tcp | open | netbios-ssn | ddad
+139/tcp | open   | netbios-ssn  | ddad
 ---------------------------------
-445/tcp | open | microsoft-ds | Windows 7 Professional 7601 Service Pack 1
+445/tcp | open   | microsoft-ds | Windows 7 Professional 7601 Service Pack 1
 ---------------------------------
