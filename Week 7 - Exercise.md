@@ -38,17 +38,48 @@ Questions:
   	-	Upload/download files
 
     SSH
-  	•	Brute force login
-  	•	Credential stuffing
+  	-	Brute force login
+  	-	Credential stuffing
 
     HTTP
-  	•	Web attacj
-  	•	Directory navigating
+  	-	Web attacj
+  	-	Directory navigating
 
     NetBIOS
-  	•	Gather internal network info
+  	-	Gather internal network info
 
     SMB
-  	•	Remote Code Execution
+  	-	Remote Code Execution
 
    2. What vulnerabilities are likely present based on the version?
+      vsftpd 2.3.4
+      - Known for backdoor vulnerability (CVE-2011-2523)
+     
+      OpenSSH 5.3p1
+      - Old version. Provide weak encryption, so brute-force is viable
+
+      Apache 2.2.8
+      - Outdated, vulnerable to RCE/XSS
+     
+      Windows 7 Professional 7601 Service Pack 1
+      - EternalBlue (MS17-010). Exploitable using metasploit
+     
+   3. Which one is the highest risk and why?
+      FTP
+      - Has built-in backdoor
+      - No need for brute force or any complex exploit
+      - Can gain shell access immediately
+     
+   4. What attack path can be built from this?
+      Common chain from recent lab or tryhackme
+      1. Exploit vsftpd backdoor to gain access
+      2.	Enumerate system
+      3.	Use credential to access SSH
+      4.	Pivot to SNB(445)
+      5.	Escelate privilege or dump data
+     
+   5.  What should be the remediation?
+      - Upgrade or remove vsftpd 2.3.4 entirely
+      - Patch Windows
+ 	   - Disable unused ports
+	   - Update Apache & SSH
