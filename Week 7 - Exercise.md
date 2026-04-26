@@ -34,8 +34,8 @@ ______________________
 Questions: 
 1.	What can an attacker do with each port?
    FTP
-  	•	Anonymous login attempts
-  	•	Upload/download files
+  	-	Anonymous login attempts
+  	-	Upload/download files
 
     SSH
   	•	Brute force login
@@ -51,4 +51,4 @@ Questions:
     SMB
   	•	Remote Code Execution
 
-2. 
+   2. What vulnerabilities are likely present based on the version?
