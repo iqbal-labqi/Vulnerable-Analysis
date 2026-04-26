@@ -29,4 +29,26 @@ ______________________
 80/tcp  | open   | http         | Apache 2.2.8
 139/tcp | open   | netbios-ssn  | ddad
 445/tcp | open   | microsoft-ds | Windows 7 Professional 7601 Service Pack 1
----------------------------------
+---------------------------------------------------------------------------
+
+Questions: 
+1.	What can an attacker do with each port?
+   FTP
+  	•	Anonymous login attempts
+  	•	Upload/download files
+
+    SSH
+  	•	Brute force login
+  	•	Credential stuffing
+
+    HTTP
+  	•	Web attacj
+  	•	Directory navigating
+
+    NetBIOS
+  	•	Gather internal network info
+
+    SMB
+  	•	Remote Code Execution
+
+2. 
