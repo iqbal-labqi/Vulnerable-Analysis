@@ -20,9 +20,11 @@ The flag is SUCTF2023{ai_is_cool}
 ____________________________
 
 <h1>Question 3: Interpret an Nmap Output</h1>
+______________________
+
 Port | State | Service | Version
 21/tcp | open | ftp | vsftpd 2.3.4
 22/tcp | open | ssh	| OpenSSH 5.3p1 
 80/tcp | open | http | Apache 2.2.8 
-139/tcp | open | netbios-ssn
+139/tcp | open | netbios-ssn |
 445/tcp | open | microsoft-ds | Windows 7 Professional 7601 Service Pack 1
