@@ -98,11 +98,11 @@ Questions:
      
    4. What attack path can be built from this?
       Common chain from recent lab or tryhackme
-      1. Exploit vsftpd backdoor to gain access
+      1.    Exploit vsftpd backdoor to gain access (FTP)
       2.	Enumerate system
-      3.	Use credential to access SSH
-      4.	Pivot to SNB(445)
-      5.	Escelate privilege or dump data
+      3.	Data Extraction or any Hidden content
+      4.	Use credential to access SSH
+      6.	Escelate privilege
      
    5.  What should be the remediation?
       - Upgrade or remove vsftpd 2.3.4 entirely
