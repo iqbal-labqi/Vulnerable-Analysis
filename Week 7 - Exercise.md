@@ -144,16 +144,16 @@ Upload to your nessus (Network_Scan.nessus) and analyse the files. Focus on crit
 ^| Nessus interface
 
 1.	What is the affected Port number
-    8009
+    - 8009
 
 2.	What is the Affected protocol
-	TCP AJP protocol
+	- TCP AJP protocol
 
 3.	What is the CVSS Score of vulnerability found
-	9.8
+	- 9.8
 
 4.	Can you find any exploit related to this vulnerability?
 	<img width="516" height="331" alt="image" src="https://github.com/user-attachments/assets/14243dbe-b04b-48a6-b8dc-3c1ffe9de3a2" />
 
 5. Find CVE for this vulnerability.
-	CVE-2020-1938, CVE-2020-1745
+   - CVE-2020-1938, CVE-2020-1745
