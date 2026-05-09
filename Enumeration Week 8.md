@@ -342,8 +342,6 @@ Enumerated users
 - tmp share accessible anonymously
 - IPC$ exposed
 
-<br>
-
 *Password Policy*
 - Minimum password length: 5
 - Password complexity disabled
@@ -352,3 +350,40 @@ Enumerated users
 
 Security Impact:<br>
 The target exposed extensive SMB information through null session access. Weak password policies and accessible SMB shares significantly increase the risk of unauthorized access and lateral movement.
+
+<h2>Challenge 13 — NFS Exports</h2>
+Command:<br>
+showmount -e <IP>
+ <br>
+ <br>
+
+Example output:
+/home *
+/public 192.168.1.0/24
+<br>
+
+<img width="603" height="244" alt="image" src="https://github.com/user-attachments/assets/954ea438-0642-4cda-b2d1-edf6dd8dd1ab" />
+<br>
+<img width="775" height="698" alt="image" src="https://github.com/user-attachments/assets/8c3be325-d715-4df5-b4f3-dcafd16bf68c" />
+<br>
+<img width="922" height="773" alt="image" src="https://github.com/user-attachments/assets/31648038-f983-4ce2-97ef-fddafb4b9e45" />
+<br>
+<img width="948" height="76" alt="image" src="https://github.com/user-attachments/assets/ca6dc763-ee6f-4688-b56f-0f6aa3504686" />
+<br>
+
+Finding:<br>
+What i just did is mounted the root filesystem of the target to my Kali Linux. And now i have the visibilty of target's file
+<br>
+
+| Export | Access                  |
+| ------ | ----------------------- |
+| /      | Accessible to all hosts (*)|
+The remote root filesystem was successfully mounted and enumerated.
+
+My Analysis:<br>
+The target exposes its entire root filesystem through NFS without authentication restrictions. Remote users are able to browse sensitive system directories.
+<br>
+Security Impact:<br>
+This represents a severe security vulnerability that may expose sensitive files, credentials, configurations, and potential privilege escalation paths.
+
+
