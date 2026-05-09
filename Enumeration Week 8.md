@@ -53,9 +53,37 @@ dig MX bing.com
 <img width="1050" height="604" alt="image" src="https://github.com/user-attachments/assets/b94c6f59-e387-4823-80d0-ecc0a60925e8" />
 
 Finding
-|Record             | Result        |
-|-------------------|---------------|
+|Record             | Result                                 |
+|-------------------|----------------------------------------|
 | A                 |    150.171.27.10, 150.171.28.10        |
 | AAAA              |    2620:1ec:33::10                     |
 | NS                |    Azure DNS and NS1 servers           |
 | NS                |    bing-com.mail.protection.outlook.com|
+
+My Analysis
+Bing uses both the IPV4 and IPV6 infrastructure. DNS emuration allso revealed Microsoft Azure DNS architecture and Outlook-based infrastructure
+
+Security Impact:
+Public DNS information may assist attackers in infrastructure mapping, phishing preparation, and service targeting.
+
+
+***Challenge 4 — SNMPwalk***
+
+SNMP is on port 161.
+Command:
+snmpwalk -v1 -c public <IP>
+
+Expected leaked info (depends on VM):
+
+•	sysName
+•	sysDescr
+•	network interface list
+•	system uptime
+•	sometimes processes
+
+<img width="609" height="206" alt="image" src="https://github.com/user-attachments/assets/0a53d824-0e5f-4eab-92c3-eaf711a8e02c" />
+
+Finding
+Port 161/UDP was found to be closed, tells that the SNMP service is not available on the target host. BUt, it still tells the Mac address vendor, which tells the system is running in a virtualized environment
+
+Security Impact
