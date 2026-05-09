@@ -281,14 +281,6 @@ Expected output:
 <img width="624" height="831" alt="image" src="https://github.com/user-attachments/assets/e1619fef-8d22-4209-bb7b-8ea3071991aa" />
 <br>
 Finding:
-
-| Item         | Result              |
-| ------------ | ------------------- |
-| OS           | Unix                |
-| SMB Software | Samba 3.0.20-Debian |
-| Hostname     | metasploitable      |
-| Domain       | localdomain         |
-
 | Item         | Result              |
 | ------------ | ------------------- |
 | OS           | Unix                |
