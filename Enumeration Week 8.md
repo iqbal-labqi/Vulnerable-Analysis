@@ -11,10 +11,10 @@ Name	Type  Status
 WIN-SERVER		<00> UNIQUE Registered DOMAIN	<00> GROUP Registered ADMINISTRATOR <03> UNIQUE Registered WIN-SERVER		<20> UNIQUE Registered
 
 Interpretation:
-<00> UNIQUE → hostname
-<00> GROUP → domain/workgroup
-<03> → Messenger service
-<20> → File server service (SMB enabled)
+- <00> UNIQUE → hostname
+- <00> GROUP → domain/workgroup
+- <03> → Messenger service
+- <20> → File server service (SMB enabled)
 
 <img width="1050" height="876" alt="image" src="https://github.com/user-attachments/assets/d3a60e45-4e24-47bf-a168-0a80c10fade5" />
 Tried to scan from windows to Metasploit but the netbios port is closed, so from the windows terminal it said unreachable
@@ -35,7 +35,7 @@ Multiple exposed services open increase the chance of to be attack by attacker
 
 Find any public DNS.
 Commands:
-nslookup <domain> dig ANY <domain> dig MX <domain>
+- nslookup <domain> dig ANY <domain> dig MX <domain>
 Expected findings:
 
 •	A record → IPv4 dig 
