@@ -381,6 +381,7 @@ What i just did is mounted the root filesystem of the target to my Kali Linux. A
 | Export | Access                  |
 | ------ | ----------------------- |
 | /      | Accessible to all hosts (*)|
+
 The remote root filesystem was successfully mounted and enumerated.
 
 My Analysis:<br>
