@@ -1,3 +1,5 @@
+BTW, I am using my own Laptop for running zenmap or any attack from challenge 7 and above. My W10 VM somehow force me to update but then has the audacity to stuck on the loading screen for like, 2 days now. Dont worry, my laptop still can run with no problem whatsoever
+
 <h1>SECTION A — BASIC ENUMERATION</h1>
 
 <h2>Challenge 1 — NetBIOS Enumeration</h2>
@@ -383,7 +385,41 @@ The remote root filesystem was successfully mounted and enumerated.
 My Analysis:<br>
 The target exposes its entire root filesystem through NFS without authentication restrictions. Remote users are able to browse sensitive system directories.
 <br>
+<br>
 Security Impact:<br>
 This represents a severe security vulnerability that may expose sensitive files, credentials, configurations, and potential privilege escalation paths.
+<br>
 
+
+<h2>Challenge 14 — SNMP NSE</h2>
+Commands:<br>
+nmap -sU -p161 --script=snmp-sysdescr <IP> <br>nmap -sU -p161 --script=snmp-processes <IP>
+<br><br>
+Expected outputs:
+-	OS description
+- running services via SNMP
+
+<img width="566" height="213" alt="image" src="https://github.com/user-attachments/assets/8201d6ce-f37e-4295-97e4-7de84caa5503" />
+
+Finding:<br>
+Same like challenge 4, the port is close, so no futher enumeration can do since it is impossible. On the bright side, we know the target is a VM.
+
+<h2>Challenge 15 — DNS Zone Transfer</h2>
+
+Commands:<br>
+dig axfr <domain> @<DNSserver>
+<br>dnsrecon -d <domain> -t axfr 
+<br>
+Expected:
+- If misconfigured → full list of DNS entries
+- If secure → “Transfer failed”
+
+<img width="750" height="752" alt="image" src="https://github.com/user-attachments/assets/7d84f504-363e-42c9-88ed-f422adbc1ca2" />
+<br>
+From here I discovered:
+
+| Provider  | Nameservers                  |
+| --------- | ---------------------------- |
+| Azure DNS | `ns1-204.azure-dns.com`, etc |
+| NS1       | `dns1.p09.nsone.net`, etc    |
 
