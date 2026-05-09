@@ -1,4 +1,4 @@
-***Challenge 1 — NetBIOS Enumeration***
+<h1>Challenge 1 — NetBIOS Enumeration<h1>
 
 Command:
 nbtstat -a <target_IP>
@@ -19,7 +19,7 @@ Interpretation:
 <img width="1050" height="876" alt="image" src="https://github.com/user-attachments/assets/d3a60e45-4e24-47bf-a168-0a80c10fade5" />
 Tried to scan from windows to Metasploit but the netbios port is closed, so from the windows terminal it said unreachable
 
-***Challenge 2 — Fast Nmap Scan***
+<h1>Challenge 2 — Fast Nmap Scan<h1>
 
 <img width="1050" height="771" alt="image" src="https://github.com/user-attachments/assets/314de994-d4f8-480b-b9cd-69d348e7e4ed" />
 Scanned to Metasploit
@@ -31,7 +31,7 @@ Security Impact:
 Multiple exposed services open increase the chance of to be attack by attacker
 
 
-***Challenge 3 — DNS Records***
+<h1>Challenge 3 — DNS Records<h1>
 
 Find any public DNS.
 Commands:
@@ -67,7 +67,7 @@ Security Impact:
 Public DNS information may assist attackers in infrastructure mapping, phishing preparation, and service targeting.
 
 
-***Challenge 4 — SNMPwalk***
+<h1>Challenge 4 — SNMPwalk<h1>
 
 SNMP is on port 161.
 Command:
