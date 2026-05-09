@@ -1,5 +1,3 @@
-BTW, I am using my own Laptop for running zenmap or any attack from challenge 7 and above. My W10 VM somehow force me to update but then has the audacity to stuck on the loading screen for like, 2 days now. Dont worry, my laptop still can run with no problem whatsoever
-
 <h1>SECTION A — BASIC ENUMERATION</h1>
 
 <h2>Challenge 1 — NetBIOS Enumeration</h2>
