@@ -220,7 +220,7 @@ Students MUST note the version.<br>
 <br>
 Finding:
 | IP            | Device         | Result       |
-| ------------- | -------------- | ------------ |
+|---------------|----------------|--------------|
 | 192.168.0.235 | Metasploitable | FTP open     |
 | 192.168.0.234 | Windows host    | FTP filtered |
 
