@@ -218,7 +218,7 @@ Students MUST note the version.<br>
 
 <br>
 <br>
-Finding:<br>
+Finding:
 | IP            | Device         | Result       | Meaning|
 | ------------- | -------------- | ------------ |--------|
 | 192.168.0.235 | Metasploitable | FTP open     |FTP service is actively running; banner grabbing should work|
