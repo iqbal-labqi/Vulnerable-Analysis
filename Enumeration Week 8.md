@@ -462,4 +462,161 @@ The DNS server was misconfigured to permit unrestricted AXFR requests, and that 
 Security Impact:<br>
 Successful DNS zone transfers helps assist attackers a bit by revealing infrastructure architecture, hidden systems, internal naming conventions, and external attack surfaces.
 
+<h2>Challenge 16 — Version Detection</h2>
+
+Command:<br>
+nmap -sV <IP>
+<br>
+Expected:
+- Version numbers for SSH, HTTP, FTP, SQL
+<br>
+<img width="950" height="674" alt="image" src="https://github.com/user-attachments/assets/becbd9b2-411c-4b0a-9ebd-96f0931a02cb" />
+<br>
+Finding:
+- FTP: vsFTPd 2.3.4
+- SMB: Samba 3.0.20
+- SMTP: Postfix
+- HTTP: Apache
+- SSH: OpenSSH
+
+My Analysis:<br>
+The target exposes several outdated and potentially vulnerable services that may be available to exploits.
+
+Security Impact:<br>
+Version disclosure enables attackers to identify known vulnerabilities and plan the exploitation attempts against specific services.
+<br>
+<h2>Challenge 17 — OS Detection</h2>
+
+Command:<br>
+nmap -O <IP>
+<br>
+Expected:
+- OS guess (Linux / Windows)
+- Accuracy %
+<br>
+
+<img width="867" height="775" alt="image" src="https://github.com/user-attachments/assets/d03c2b1b-7b78-4e53-b1bd-77309cfa1da9" />
+Metasplot
+<br>
+<br>
+Finding:
+- Linux 2.6.X
+- Estimated kernel range: 2.6.9 – 2.6.33
+
+Exposed Services:
+- FTP
+- SSH
+- Telnet
+- SMTP
+- SMB
+- NFS
+- MySQL
+- PostgreSQL
+- VNC
+  
+<br>
+<img width="875" height="407" alt="image" src="https://github.com/user-attachments/assets/246dd3bd-77e6-43d0-8bea-89af2964e698" />
+<br>
+Finding:<br>
+Typical modern device to have hardened system. OS guessing is Microsoft Windows 11 with 90% accuracy
+<br>
+My Analysis:<br>
+Metasploit exposes numerous legacy and insecure services, significantly increasing the attack surface. OS fingerprinting results aligned with previous service and protocol enumeration findings.
+
+Security Impact:<br>
+Accurate OS fingerprinting and service discovery allow attackers to identify compatible exploits and prioritize vulnerable services.
+
+<br>
+
+<h2>Challenge 18 — Finger Enumeration</h2>
+Command: finger @<IP>
+ <br>
+Expected:
+- Show logged-in users OR
+- Service-disabled message
+<br>
+<img width="746" height="502" alt="image" src="https://github.com/user-attachments/assets/bb702dbf-559f-414f-bd09-e04062b0722b" />
+<br>
+ 
+| Target        | Result          |
+| ------------- | --------------- |
+| 192.168.0.235 | 79/tcp closed   |
+| 192.168.0.234 | 79/tcp filtered |
+
+My Analysis:<br>
+The Finger service was unavailable on both systems. Windows 11 probably because of firewall.
+
+Security Impact:<br>
+Disabling or filtering Finger reduces information disclosure risks and limits username enumeration opportunities.
+
+<br>
+
+<h2>Challenge 19 — RPC Info</h2>
+
+Command: rpcinfo -p <IP>
+<br>
+Expected:<br>
+- portmapper
+- mountd
+- nfs
+- status
+
+<img width="683" height="523" alt="image" src="https://github.com/user-attachments/assets/2bfcadb2-08de-464c-b972-d6863d8fd6b1" />
+<br>
+Finding:<br>
+Multipe RPC protocol versions were exposed
+
+| Service    | Protocols |
+| ---------- | --------- |
+| portmapper | TCP/UDP   |
+| nfs        | TCP/UDP   |
+| mountd     | TCP/UDP   |
+| nlockmgr   | TCP/UDP   |
+| status     | TCP/UDP   |
+
+My Analysis:<br>
+RPC enumeration confirmed a fully operational NFS infrastructure with several supporting services and legacy protocol compatibility enabled.
+
+Security Impact:<br>
+Exposed RPC and NFS services increase attack surface and may lead unauthorized remote filesystem access or privilege escalation.
+<br>
+
+| Enumeration Step | What It Revealed          |
+| ---------------- | ------------------------- |
+| showmount        | exported filesystem       |
+| mount            | filesystem accessible     |
+| rpcinfo          | supporting infrastructure |
+| nmap             | exposed ports             |
+| SMB              | usernames                 |
+| FTP              | vulnerable software       |
+
+<h2>Challenge 20 — DNSSEC Enumeration</h2>
+Command: nmap --script dns-nsec-enum <domain>
+<br>
+Expected:
+- NSEC chain disclosure
+- List of additional DNS entries not normally visible
+
+<img width="774" height="632" alt="image" src="https://github.com/user-attachments/assets/2a3be8fc-6b30-4211-aac1-d8b66cd0fae6" />
+<img width="952" height="444" alt="image" src="https://github.com/user-attachments/assets/8b27d0eb-ebfa-4a1e-9be6-c88c8cdb0f3f" />
+
+<br>
+Finding:<br>
+The domain returned valid DNSKEY records, confirming DNSSEC support. However, NSEC enumeration did not disclose additional DNS entries or walkable DNSSEC chains. Below may be one of the possible reason;
+- the domain uses hardened NSEC handling
+- NSEC3 protections
+- no walkable chain exposed
+<br>
+
+My Analysis:<br>
+The target domain appears to implement DNSSEC securely while preventing DNSSEC-based enumeration attacks.
+<br>
+
+Security Impact:<br>
+Proper DNSSEC implementation improves DNS integrity while limiting infrastructure disclosure through NSEC walking.
+
+<br>
+
+<h1>SECTION C — ADVANCED ENUMERATION</h1>
+
 
