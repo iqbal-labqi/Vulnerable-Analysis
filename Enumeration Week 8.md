@@ -288,6 +288,14 @@ Finding:<br>
 | Hostname     | metasploitable      |
 | Domain       | localdomain         |
 
+| Item         | Result              |
+| ------------ | ------------------- |
+| OS           | Unix                |
+| SMB Software | Samba 3.0.20-Debian |
+| Hostname     | metasploitable      |
+| Domain       | localdomain         |
+
+
 Users:<br>
 - msfadmin
 - root
