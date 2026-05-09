@@ -208,6 +208,7 @@ The target may have NTP enabled but restrict remote peer enumeration or filter N
 
 Security Impact:<br>
 Restricting NTP enumeration reduces exposure of network topology and time synchronization infrastructure.
+<br>
 
 <h2>Challenge 9 — FTP Banner</h2>
 Command:<br>
