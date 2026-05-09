@@ -221,8 +221,8 @@ Students MUST note the version.<br>
 Finding:<br>
 | IP            | Device         | Result       | Meaning|
 | ------------- | -------------- | ------------ |--------|
-| 192.168.0.235 | Metasploitable | FTP open     |- Firewall may blocking the traffic<br> - packets are silently dropped|
-| 192.168.0.234 | Windows host    | FTP filtered |
+| 192.168.0.235 | Metasploitable | FTP open     |FTP service is actively running; banner grabbing should work|
+| 192.168.0.234 | Windows host    | FTP filtered |Firewall may blocking the traffic OR packets are silently dropped|
 
 
 
