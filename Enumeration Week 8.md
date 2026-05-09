@@ -343,7 +343,8 @@ Enumerated users
 - IPC$ exposed
 
 <br>
-*Password Policy*
+
+*Password Policy*<br>
 - Minimum password length: 5
 - Password complexity disabled
 
