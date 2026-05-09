@@ -127,4 +127,4 @@ Expected outcomes:
 
 <img width="1027" height="444" alt="image" src="https://github.com/user-attachments/assets/d357a6b1-5f5c-4c5f-983b-96bd90727501" />
 
-The target is alive but LDAP serviese is not running or accessible
+The target is alive but LDAP serviese<br> is not running or accessible
