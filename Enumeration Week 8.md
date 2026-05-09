@@ -127,4 +127,68 @@ Expected outcomes:
 
 <img width="1027" height="444" alt="image" src="https://github.com/user-attachments/assets/d357a6b1-5f5c-4c5f-983b-96bd90727501" />
 
-The target is alive but LDAP serviese<br> is not running or accessible
+Finding:
+The target is alive but LDAP serviese is not running or accessible<br>
+
+The target mentioned---Oracle VirtualBox virtual NIC<br>
+<br>
+Means, the target is virtualized, likely a VM
+
+<h1>Challenge 7 — SMTP VRFY / EXPN</h1>
+
+Command: <br>
+nc <IP> 25 <br>
+VRFY root <br>
+EXPN admin
+<br>
+Expected:
+
+•	Weak server: responds with 250 <user> → valid
+•	Hardened server: 550 User unknown / 252 Cannot VRFY user
+
+
+<img width="809" height="247" alt="image" src="https://github.com/user-attachments/assets/0d01a5b2-d87a-4fe7-abe3-93bafc476475" />
+
+Finding:
+
+|Item            |     Result
+|----------------|------------
+|SMTP Software   |Postfix                   |
+|Operating System|Ubuntu                    |
+|Hostname        |metasploitable.localdomain|
+|Enumerated Users|root, msfadmin            |
+
+<br>
+My Analysis:<br>
+The SMTP server responded to VRFY requests and disclosed potentially valid usernames. The mail banner also revealed the underlying mail software and operating system.
+<br>
+<br>
+
+Security Impact:<br>
+SMTP enumeration may help attackers identify valid accounts for password attacks and phishing campaigns.
+
+<h1>Challenge 8 — NTP Enumeration</h1>
+Command:
+<br>ntpq -p <IP>
+
+Expected:
+<br>
+List of time peers:
+<br>remote	refid	st when poll reach
+<br>*time1	.GPS.	1	32	64	377
+
+Interpretation:
+
+- * = currently selected peer
+- st = stratum level
+<br>
+<img width="715" height="557" alt="image" src="https://github.com/user-attachments/assets/85f30277-4a8b-460b-b66b-8989be924280" />
+
+Finding:<br>
+
+|Target|REsult|
+|------|------|
+|192.168.0.235|123/udp closed|
+|192.168.0.234|123/udp open|filtered|
+<br><br>
+192.168.0.235 
