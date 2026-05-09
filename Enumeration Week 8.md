@@ -182,9 +182,9 @@ List of time peers:
 <br>*time1	.GPS.	1	32	64	377
 
 Interpretation:
-
 - * = currently selected peer
 - st = stratum level
+
 <br>
 <img width="715" height="557" alt="image" src="https://github.com/user-attachments/assets/85f30277-4a8b-460b-b66b-8989be924280" />
 
