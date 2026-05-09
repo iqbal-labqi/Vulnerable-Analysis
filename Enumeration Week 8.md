@@ -420,6 +420,45 @@ From here I discovered:
 
 | Provider  | Nameservers                  |
 | --------- | ---------------------------- |
-| Azure DNS | `ns1-204.azure-dns.com`, etc |
-| NS1       | `dns1.p09.nsone.net`, etc    |
+| Azure DNS | ns1-204.azure-dns.com, etc |
+| NS1       | dns1.p09.nsone.net, etc    |
+
+<img width="900" height="273" alt="image" src="https://github.com/user-attachments/assets/cfc3a7aa-2d76-479c-aa15-e8b8fdb4d663" />
+<br>
+
+So it failed, as expected from a big domain like bing. Below is my testing on much smaller domain *zonetrasnfer.me*
+<br>
+<img width="662" height="477" alt="image" src="https://github.com/user-attachments/assets/53b7153b-80f2-4f4f-a947-fc1bc7e1a281" />
+<br>
+From here I discovered nameserver:
+- nsztm1.digi.ninja
+- nsztm2.digi.ninja
+
+<img width="957" height="798" alt="image" src="https://github.com/user-attachments/assets/63e0e00b-e6ed-4fa5-b98b-8eb6f8775afb" />
+<img width="947" height="727" alt="image" src="https://github.com/user-attachments/assets/dab15d8b-2d4b-4180-8c8b-303d6b64565f" />
+
+
+<br>
+Finding:<br>
+The DNS server allowed a full zone transfer and disclosed extensive DNS records including;
+- internal hosts
+- VPN endpoints
+- mail infrastructure
+- staging systems
+- SIP records
+- TXT records
+- IPv6 records
+
+Examples:
+- vpn.zonetransfer.me
+- internal.zonetransfer.me
+- owa.zonetransfer.me
+- staging.zonetransfer.me
+
+My Analysis:<br>
+The DNS server was misconfigured to permit unrestricted AXFR requests, and that cause exposing the organization’s DNS infrastructure to unauthenticated users.
+
+Security Impact:<br>
+Successful DNS zone transfers helps assist attackers a bit by revealing infrastructure architecture, hidden systems, internal naming conventions, and external attack surfaces.
+
 
