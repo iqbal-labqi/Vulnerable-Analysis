@@ -620,4 +620,16 @@ Proper DNSSEC implementation improves DNS integrity while limiting infrastructur
 
 <h1>SECTION C — ADVANCED ENUMERATION</h1>
 
+<h2>Challenge 21 — Windapsearch LDAP</h2>
+
+Command:<br>
+python3 windapsearch.py -d domain.local -u user -p pass --groups
+<br>
+Expected:<br>
+- Domain Admins
+- Enterprise Admins
+- Schema Admins
+- Domain Users Identifies privileged groups.
+
+LDAP port closed, cant do
 
