@@ -228,3 +228,9 @@ Finding:
 
 Firewall may blocking the traffic OR packets are silently dropped|
 FTP service is actively running; banner grabbing should work|
+
+| State    | Meaning                              |
+| -------- | ------------------------------------ |
+| open     | Service actively listening           |
+| closed   | No service running                   |
+| filtered | Firewall/security device interfering |
