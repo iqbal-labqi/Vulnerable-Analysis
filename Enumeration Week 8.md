@@ -280,7 +280,7 @@ Expected output:
 <img width="687" height="619" alt="image" src="https://github.com/user-attachments/assets/0c28564e-65c7-4be9-9cfd-b829502becc3" />
 <img width="624" height="831" alt="image" src="https://github.com/user-attachments/assets/e1619fef-8d22-4209-bb7b-8ea3071991aa" />
 <br>
-Finding:
+Finding:<br>
 | Item         | Result              |
 | ------------ | ------------------- |
 | OS           | Unix                |
