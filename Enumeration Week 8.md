@@ -1,4 +1,6 @@
-<h1>Challenge 1 — NetBIOS Enumeration</h1>
+<h1>SECTION A — BASIC ENUMERATION</h1>
+
+<h2>Challenge 1 — NetBIOS Enumeration</h2>
 
 Command:
 nbtstat -a <target_IP>
@@ -19,7 +21,7 @@ Interpretation:
 <img width="1050" height="876" alt="image" src="https://github.com/user-attachments/assets/d3a60e45-4e24-47bf-a168-0a80c10fade5" />
 Tried to scan from windows to Metasploit but the netbios port is closed, so from the windows terminal it said unreachable
 
-<h1>Challenge 2 — Fast Nmap Scan</h1>
+<h2>Challenge 2 — Fast Nmap Scan</h2>
 
 <img width="1050" height="771" alt="image" src="https://github.com/user-attachments/assets/314de994-d4f8-480b-b9cd-69d348e7e4ed" />
 Scanned to Metasploit
@@ -31,7 +33,7 @@ Security Impact:
 Multiple exposed services open increase the chance of to be attack by attacker
 
 
-<h1>Challenge 3 — DNS Records</h1>
+<h2>Challenge 3 — DNS Records</h2>
 
 Find any public DNS.
 Commands:
@@ -67,7 +69,7 @@ Security Impact:
 Public DNS information may assist attackers in infrastructure mapping, phishing preparation, and service targeting.
 
 
-<h1>Challenge 4 — SNMPwalk</h1>
+<h2>Challenge 4 — SNMPwalk</h2>
 
 SNMP is on port 161.
 Command:
@@ -89,7 +91,7 @@ Port 161/UDP was found to be closed, tells that the SNMP service is not availabl
 Security Impact:
 Since SNMP is unavailable, SNMP-based information leakage is prevented on this target. Disabling unnecessary services reduces the attack surface.
 
-<h1>Challenge 5 — TTL OS Fingerprinting</h1>
+<h2>Challenge 5 — TTL OS Fingerprinting</h2>
 
 
 
@@ -114,7 +116,7 @@ Possible cause:
 - Wrong IP
 - Network issue
 
-<h1>Challenge 6 — Anonymous LDAP Ǫuery</h1>
+<h2>Challenge 6 — Anonymous LDAP Ǫuery</h2>
 
 LDAP run on port 389. Command:
 ldapsearch -x -H ldap://<IP> -b "dc=example,dc=com"
@@ -134,7 +136,7 @@ The target mentioned---Oracle VirtualBox virtual NIC<br>
 <br>
 Means, the target is virtualized, likely a VM
 
-<h1>Challenge 7 — SMTP VRFY / EXPN</h1>
+<h2>Challenge 7 — SMTP VRFY / EXPN</h2>
 
 Command: <br>
 nc <IP> 25 <br>
@@ -167,7 +169,7 @@ The SMTP server responded to VRFY requests and disclosed potentially valid usern
 Security Impact:<br>
 SMTP enumeration may help attackers identify valid accounts for password attacks and phishing campaigns.
 
-<h1>Challenge 8 — NTP Enumeration</h1>
+<h2>Challenge 8 — NTP Enumeration</h2>
 Command:
 <br>ntpq -p <IP>
 
@@ -205,7 +207,7 @@ The target may have NTP enabled but restrict remote peer enumeration or filter N
 Security Impact:<br>
 Restricting NTP enumeration reduces exposure of network topology and time synchronization infrastructure.
 
-<h1>Challenge 9 — FTP Banner</h1>
+<h2>Challenge 9 — FTP Banner</h2>
 Command:<br>
 nc <IP> 21
 <br><br>
@@ -215,6 +217,7 @@ Typical output:<br>
 Students MUST note the version.<br>
 
 <img width="579" height="352" alt="image" src="https://github.com/user-attachments/assets/6fad6808-29e4-4853-be91-87cc116c5a16" />
+<img width="277" height="91" alt="image" src="https://github.com/user-attachments/assets/4901895c-8826-46db-91f7-017be01395bc" />
 
 <br>
 <br>
@@ -232,4 +235,78 @@ Finding:
 | closed   | No service running                   |
 | filtered | Firewall/security device interfering |
 
+<h2>Challenge 10 — Anonymous FTP Login</h2>
 
+Command:<br>
+ftp <IP>
+
+Expected:
+
+- If allowed: login succeeds with username anonymous
+- Students list readable directories
+
+<br>
+<img width="472" height="288" alt="image" src="https://github.com/user-attachments/assets/b257e25c-855a-4d13-8afb-00a97719a91c" />
+
+<br><br>
+| Item             | Result                     |
+| ---------------- | -------------------------- |
+| FTP Software     | vsFTPd 2.3.4               |
+| Authentication   | Anonymous login successful |
+| System Type      | UNIX                       |
+| Directory Access | Allowed                    |
+
+My Analysis:<br>
+The target FTP server allowed anonymous login without valid credentials. Directory listing and navigation commands were also can.
+<br>
+<br>
+Security Impact:<br>
+Anonymous FTP access may expose sensitive files and helps attackers in reconnaissance or unauthorized data access.
+
+<h1>SECTION B — INTERMEDIATE ENUMERATION</h1>
+
+<h2>Challenge 11 — SMB NSE Enumeration</h2>
+
+Commands:<br>
+- nmap --script smb-os-discovery -p445 <IP> 
+- nmap --script smb-enum-users -p445 <IP><br>
+
+Expected output:
+
+- OS: Windows Server / Samba version
+- Domain/workgroup name
+- List of users (Administrator, Guest, etc.)
+
+<img width="687" height="619" alt="image" src="https://github.com/user-attachments/assets/0c28564e-65c7-4be9-9cfd-b829502becc3" />
+<img width="624" height="831" alt="image" src="https://github.com/user-attachments/assets/e1619fef-8d22-4209-bb7b-8ea3071991aa" />
+<br>
+Finding:
+| Item         | Result              |
+| ------------ | ------------------- |
+| OS           | Unix                |
+| SMB Software | Samba 3.0.20-Debian |
+| Hostname     | metasploitable      |
+| Domain       | localdomain         |
+
+Users:<br>
+- msfadmin
+- root
+- postgres
+- mysql
+- tomcat55
+- www-data
+
+<br>
+My Analysiss:<br>
+The SMB service allowed many user enumeration and disclosed detailed operating system information. Multiple service-related accounts tells that several installed applications and potential attack surfaces.<br>
+
+Securiy Impact:<br>
+SMB enumeration may expose valid usernames and infrastructure details useful for password attacks, privilege escalation, and exploitation planning.
+<br>
+
+<h2>Challenge 12 — Enum4linux</h2>
+
+Command:<br>
+enum4linux -a <IP>
+<br><br>
+Expected output: Users, Groups, NetBIOS info, SMB shares (IPC$, ADMIN$, etc.)
