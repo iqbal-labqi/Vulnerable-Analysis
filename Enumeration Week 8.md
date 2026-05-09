@@ -192,4 +192,37 @@ Finding:<br>
 |192.168.0.234|123/udp open|filtered|
 
 
-192.168.0.235 
+192.168.0.235 port 123 is closed, so enumeration is impossible<br>
+The ntpq query against 192.168.0.234 timed out and did not disclose synchronization peers.<br>
+
+<br>
+My analysis:<br>
+The target may have NTP enabled but restrict remote peer enumeration or filter NTP query traffic. Most like because of;<br>
+- the host did not allow NTP peer enumeration
+- firewall blocked the query
+- NTP daemon ignores remote requests
+
+Security Impact:<br>
+Restricting NTP enumeration reduces exposure of network topology and time synchronization infrastructure.
+
+<h1>Challenge 9 — FTP Banner</h1>
+Command:<br>
+nc <IP> 21
+<br><br>
+Typical output:<br>
+220 (vsFTPd 2.3.4)
+ <br><br>
+Students MUST note the version.<br>
+
+<img width="579" height="352" alt="image" src="https://github.com/user-attachments/assets/6fad6808-29e4-4853-be91-87cc116c5a16" />
+
+<br>
+<br>
+Finding:<br>
+| IP            | Device         | Result       | Meaning|
+| ------------- | -------------- | ------------ |--------|
+| 192.168.0.235 | Metasploitable | FTP open     |- Firewall may blocking the traffic<br> - packets are silently dropped|
+| 192.168.0.234 | Windows host    | FTP filtered |
+
+
+
