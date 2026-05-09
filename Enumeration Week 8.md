@@ -88,3 +88,43 @@ Port 161/UDP was found to be closed, tells that the SNMP service is not availabl
 
 Security Impact:
 Since SNMP is unavailable, SNMP-based information leakage is prevented on this target. Disabling unnecessary services reduces the attack surface.
+
+<h1>Challenge 5 — TTL OS Fingerprinting</h1>
+
+
+
+TTL values reference: TTL	OS Guess
+- 64	Linux / Unix
+- 128	Windows
+- 255	Cisco / BSD
+
+
+Example:
+Reply from <IP>: TTL=128 → Windows
+
+<img width="986" height="319" alt="image" src="https://github.com/user-attachments/assets/745dbf14-25d9-48be-8918-6b13001e6782" />
+TTL=64 ---Linux
+
+<img width="641" height="102" alt="image" src="https://github.com/user-attachments/assets/95230005-df61-4ef4-a520-58b86b2079a0" />
+Supposedly be windows, but no ICMP response
+
+Possible cause:
+- Host offline
+- ICMP blocked (likely my case)
+- Wrong IP
+- Network issue
+
+<h1>Challenge 6 — Anonymous LDAP Ǫuery</h1>
+
+LDAP run on port 389. Command:
+ldapsearch -x -H ldap://<IP> -b "dc=example,dc=com"
+
+
+Expected outcomes:
+ 
+- If anonymous bind allowed: returns user objects, descriptions, CN entries
+- If not allowed: invalid credentials or empty results
+
+<img width="1027" height="444" alt="image" src="https://github.com/user-attachments/assets/d357a6b1-5f5c-4c5f-983b-96bd90727501" />
+
+The target is alive but LDAP serviese is not running or accessible
