@@ -38,10 +38,10 @@ Commands:
 - nslookup <domain> dig ANY <domain> dig MX <domain>
 Expected findings:
 
-•	A record → IPv4 dig 
-•	AAAA record → IPv6
-•	MX → mail server
-•	NS → primary + secondary DNS
+- A record → IPv4 dig 
+- AAAA record → IPv6
+- MX → mail server
+- NS → primary + secondary DNS
 
 nslookup bing.com
 <img width="897" height="534" alt="image" src="https://github.com/user-attachments/assets/9c141047-1924-483f-9701-51371be32bd8" />
@@ -60,7 +60,7 @@ Finding
 | NS                |    Azure DNS and NS1 servers           |
 | NS                |    bing-com.mail.protection.outlook.com|
 
-My Analysis
+My Analysis:
 Bing uses both the IPV4 and IPV6 infrastructure. DNS emuration allso revealed Microsoft Azure DNS architecture and Outlook-based infrastructure
 
 Security Impact:
@@ -75,15 +75,16 @@ snmpwalk -v1 -c public <IP>
 
 Expected leaked info (depends on VM):
 
-•	sysName
-•	sysDescr
-•	network interface list
-•	system uptime
-•	sometimes processes
+- sysName
+- sysDescr
+- network interface list
+- system uptime
+- sometimes processes
 
 <img width="609" height="206" alt="image" src="https://github.com/user-attachments/assets/0a53d824-0e5f-4eab-92c3-eaf711a8e02c" />
 
-Finding
+Finding:
 Port 161/UDP was found to be closed, tells that the SNMP service is not available on the target host. BUt, it still tells the Mac address vendor, which tells the system is running in a virtualized environment
 
-Security Impact
+Security Impact:
+Since SNMP is unavailable, SNMP-based information leakage is prevented on this target. Disabling unnecessary services reduces the attack surface.
