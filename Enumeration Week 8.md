@@ -229,5 +229,11 @@ Finding:
 |192.168.0.235|Metasploitable|FTP open|
 |192.168.0.234|Windows host|FTP filtered|
 
+| IP            | Device         | Result       |
+| ------------- | -------------- | ------------ |
+| 192.168.0.235 | Metasploitable | FTP open     |
+| 192.168.0.234 | Your laptop    | FTP filtered |
+
+
 Firewall may blocking the traffic OR packets are silently dropped|
 FTP service is actively running; banner grabbing should work|
