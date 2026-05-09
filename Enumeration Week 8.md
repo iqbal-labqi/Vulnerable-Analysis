@@ -281,6 +281,7 @@ Expected output:
 <img width="624" height="831" alt="image" src="https://github.com/user-attachments/assets/e1619fef-8d22-4209-bb7b-8ea3071991aa" />
 <br>
 Finding:
+
 | Item         | Result              |
 | ------------ | ------------------- |
 | OS           | Unix                |
@@ -311,3 +312,42 @@ Command:<br>
 enum4linux -a <IP>
 <br><br>
 Expected output: Users, Groups, NetBIOS info, SMB shares (IPC$, ADMIN$, etc.)
+
+<img width="940" height="768" alt="image" src="https://github.com/user-attachments/assets/7633e127-4571-409f-8b07-9e74d705338f" />
+<img width="951" height="830" alt="image" src="https://github.com/user-attachments/assets/f65189c4-c269-433b-bf15-26a8249b31aa" />
+<img width="953" height="743" alt="image" src="https://github.com/user-attachments/assets/a18f0de2-996d-424c-968e-5993982dc915" />
+<br>
+<br>
+Findings:
+<br>
+*SMB INformation*
+- Samba 3.0.20-Debian
+- Workgroup: WORKGROUP
+- Hostname: METASPLOITABLE
+
+<br>
+<br>
+
+*Null Session*
+<br>Anonymous SMB sessions were permitted without credentials.
+<br>
+Enumerated users
+- root
+- msfadmin
+- mysql
+- postgres
+- tomcat55
+
+*Shares*
+- tmp share accessible anonymously
+- IPC$ exposed
+
+<br>
+*Password Policy*
+- Minimum password length: 5
+- Password complexity disabled
+
+<br>
+
+Security Impact:<br>
+The target exposed extensive SMB information through null session access. Weak password policies and accessible SMB shares significantly increase the risk of unauthorized access and lateral movement.
