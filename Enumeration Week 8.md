@@ -344,7 +344,7 @@ Enumerated users
 
 <br>
 
-*Password Policy*<br>
+*Password Policy*
 - Minimum password length: 5
 - Password complexity disabled
 
