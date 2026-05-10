@@ -672,17 +672,43 @@ WinSize=5840 → Linux kernel 2.6 <br>
 Command used(to Metasploit):
 - ping 192.168.100.46  
 - nmap -F 192.168.100.46
+
+  <br>
 Finding:
 
-|TTL Value  |TCP Window size|TCP Behavior                          |
-|-----------|---------------|--------------------------------------|
-|64         |       Win=5840|- SYN/ACK packets<br>- RST/ACK packets|
+|TTL Value                |TCP Window size|TCP Behavior                          |
+|-------------------------|---------------|--------------------------------------|
+|64 (Linux/Unix OS family)|       Win=5840|- SYN/ACK packets<br>- RST/ACK packets|
 
+<br>
 TCP stack indicate normal behavior <br>
-
+<br>
 My Analysis:<br>
 Passive fingerprinting results strongly aligned with previous Nmap OS detection findings identifying the target as a Linux 2.6-based system.
 
 Security Impact:<br>
 Passive fingerprinting (wireshark) allows attackers to infer operating systems without performing aggressive active scanning (nmap -O/ nmap -A).
+<br>
 
+<h2>Challenge 25 — IKE Scan VPN Fingerprinting</h2>
+Command:<br>
+ike-scan <IP> <br>
+Expected:
+- Authentication Type (PSK / RSA)
+- Hash algo (SHA1/SHA256)
+- Encryption algo (AES128/256)<br>
+Identifies ANY of these.
+ <br>
+First, I look if the target exposes IKE/IPSec VPN services <br>
+ <img width="972" height="419" alt="image" src="https://github.com/user-attachments/assets/b86eae41-39d0-4133-b1d8-b92c7b26a3b7" />
+ <br>
+nmap -sU -p500 192.168.100.46
+<br>
+ My Finding:<br>
+Its closed
+<br>
+My Analysis:<br>
+The target did not expose active IKE/IPSec VPN negotiation services.
+<br>
+Security Impact:<br>
+The absence of exposed VPN services reduces external attack surface related to VPN enumeration and authentication attacks.
