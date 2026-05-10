@@ -712,3 +712,38 @@ The target did not expose active IKE/IPSec VPN negotiation services.
 <br>
 Security Impact:<br>
 The absence of exposed VPN services reduces external attack surface related to VPN enumeration and authentication attacks.
+<br>
+
+<h2>Challenge 26 — Full Enumeration Profile</h2>
+Skipp <br>
+
+<h2>Challenge 27 — IPv6 Discovery</h2>
+
+Command:<br>
+nmap -6 -O <IPv6_IP> <br>
+Expected:
+- IPv6 address
+- OS guess
+- Open v6-enabled services
+
+<img width="818" height="458" alt="image" src="https://github.com/user-attachments/assets/0afd7d66-3c85-4a1e-852d-358d760798f0" />
+<br>
+Finding:
+
+| Port | Service     |
+| ---- | ----------- |
+| 22   | SSH         |
+| 53   | DNS         |
+| 2121 | ccproxy-ftp |
+| 5432 | PostgreSQL  |
+
+<br>
+OS Detection:
+- Linux 2.6.X
+- Estimated kernel range: 2.6.18–2.6.34
+
+My Analysis: <br>
+The target exposed a smaller service surface over IPv6 compared to IPv4, indicating differing network exposure configurations between protocols.<br>
+
+Security Impact: <br>
+IPv6-enabled services may introduce additional attack surfaces if not monitored and secured consistently with IPv4 infrastructure.
