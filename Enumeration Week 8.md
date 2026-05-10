@@ -515,6 +515,7 @@ Exposed Services:
   
 <br>
 <img width="875" height="407" alt="image" src="https://github.com/user-attachments/assets/246dd3bd-77e6-43d0-8bea-89af2964e698" />
+Windows
 <br>
 Finding:<br>
 Typical modern device to have hardened system. OS guessing is Microsoft Windows 11 with 90% accuracy
@@ -631,4 +632,48 @@ Expected:<br>
 
 LDAP port closed, cant do
 
-Test
+<h2>Challenge 22 — Correlation Table</h2>
+
+Correlation Analysis:
+
+| Source | Finding                  | Correlated Evidence       | Security Relevance       |
+| ------ | ------------------------ | ------------------------- | ------------------------ |
+| SMTP   | msfadmin valid           | SMB user exists           | credential target        |
+| SMB    | Samba 3.0.20             | Linux OS detection        | vulnerable SMB stack     |
+| NFS    | root filesystem exported | mountd + rpcinfo          | severe exposure          |
+| DNS    | VPN endpoint             | external service exposure | attack surface expansion |
+
+<h2>Challenge 23 — DNS Cache Snooping</h2>
+Command:<br>
+dig example.com @<DNS> +norecurse
+ <br>
+Expected:
+- IP returned = cached
+- NXDOMAIN = not cached
+
+Full marks → student explains snooping logic.
+<br>
+
+Skipped
+
+<h2>Challenge 24 — Wireshark OS Detection</h2>
+
+Expected:
+- TCP SYN/ACK packet
+- TTL value
+- Window size
+Example:<br>
+TTL=64 → Linux <br>
+WinSize=5840 → Linux kernel 2.6 <br>
+
+<img width="646" height="770" alt="image" src="https://github.com/user-attachments/assets/421e9aa4-65de-4def-adf2-b422468809e7" />
+<br>
+<img width="1472" height="732" alt="image" src="https://github.com/user-attachments/assets/ef81a7b8-246e-4448-a529-a4a7206ebb6f" />
+Command used(to Metasploit):
+- ping 192.168.100.46  
+- nmap -F 192.168.100.46
+Finding:
+
+TTL Value|TCP Window size
+
+
