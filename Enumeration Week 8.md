@@ -674,6 +674,15 @@ Command used(to Metasploit):
 - nmap -F 192.168.100.46
 Finding:
 
-TTL Value|TCP Window size
+|TTL Value  |TCP Window size|TCP Behavior                          |
+|-----------|---------------|--------------------------------------|
+|64         |       Win=5840|- SYN/ACK packets<br>- RST/ACK packets|
 
+TCP stack indicate normal behavior <br>
+
+My Analysis:<br>
+Passive fingerprinting results strongly aligned with previous Nmap OS detection findings identifying the target as a Linux 2.6-based system.
+
+Security Impact:<br>
+Passive fingerprinting (wireshark) allows attackers to infer operating systems without performing aggressive active scanning (nmap -O/ nmap -A).
 
