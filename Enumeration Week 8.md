@@ -738,6 +738,7 @@ Finding:
 | 5432 | PostgreSQL  |
 
 <br>
+
 OS Detection:
 - Linux 2.6.X
 - Estimated kernel range: 2.6.18–2.6.34
