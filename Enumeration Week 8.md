@@ -742,6 +742,8 @@ OS Detection:
 - Linux 2.6.X
 - Estimated kernel range: 2.6.18–2.6.34
 
+<br>
+
 My Analysis: <br>
 The target exposed a smaller service surface over IPv6 compared to IPv4, indicating differing network exposure configurations between protocols.<br>
 
