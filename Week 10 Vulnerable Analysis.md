@@ -1,4 +1,5 @@
-<h1>Lab 1 (Foundation)</h1>
+<h1>Vulnerable Analysis Week 10</h1>
+<h2>Lab 1 (Foundation)</h2>
 ---------------------------
 
 *Machine Info*
@@ -38,7 +39,7 @@ Metasploitable2 | 10.0.2.15
 <br>
 <br>
 
-<h1>Lab 2 (Core Analyst Skill)</h1>
+<h2>Lab 2 (Core Analyst Skill)</h2>
 <br>
 <h2>Finding 1: Apache Tomcat Ghostcat (Web/App Category)</h2>
 <br>
@@ -63,6 +64,9 @@ Context & Exploitation Decision:
 - Conclusion: Likely Exploitable. In this sandbox environment, you have an unauthenticated, remote exploit route exposed cleanly to your Kali IP, giving you an immediate green light for exploitation.
 
 <br>
+
+<h2>Finding 2: Samba Badlock Vulnerability (Service Category)</h2>
+
 <br>
 <br>
 <br>
