@@ -17,5 +17,18 @@ Metasploitable2 | 10.0.2.15
 <br>
 <br>
 <img width="1407" height="395" alt="image" src="https://github.com/user-attachments/assets/f4d1a14c-5991-4928-845b-776c7097e5f2" />
-
-
+<br>
+<br>
+<img width="1915" height="920" alt="image" src="https://github.com/user-attachments/assets/c6a2c0f2-1bfa-430b-a645-a235e42b3372" />
+<br>
+<br>
+<img width="1721" height="704" alt="image" src="https://github.com/user-attachments/assets/143aa24a-0287-41af-bb59-af712a22062c" />
+<br>
+<br>
+| No | Vulnerability Name | CVSS Score | Severity |
+-----|--------------------|------------|----------|
+|  1  |        Canonical Ubuntu Linux SEoL (8.04.x)            |      10.0      |     CRITICAL     |
+|2|VNC Server 'password' Password|10.0|CRITICAL|
+|3|Apache Tomcat AJP Connector Request Injection (Ghostcat)|9.8|CRITICAL|
+|4|SSL Version 2 and 3 Protocol Detection|9.8|CRITICAL|
+|5|Bind Shell Backdoor Detection|9.8|CRITICAL|
