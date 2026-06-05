@@ -5,7 +5,7 @@
 <br>
 <img width="923" height="489" alt="image" src="https://github.com/user-attachments/assets/533c92c7-fd30-42eb-86c8-a61daac2e1c7" />
 <br>
-***This is Phishing because link uses a deceptive domain to mimic a payment portal***
+<b>This is Phishing because link uses a deceptive domain to mimic a payment portal<b>
 <br>
 <br>
 <h2>Level 2</h2>
@@ -14,7 +14,7 @@
 <img width="922" height="506" alt="image" src="https://github.com/user-attachments/assets/f8f8759d-60d0-4907-9b49-9de64bbf6aa0" />
 
 <br>
-***This is Phishing because contains a link to a credential-collecting page***
+<b>This is Phishing because contains a link to a credential-collecting page<b>
 <br>
 <br>
 <h2>Level 3</h2>
