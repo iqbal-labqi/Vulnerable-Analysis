@@ -41,7 +41,7 @@ Metasploitable2 | 10.0.2.15
 
 <h2>Lab 2 (Core Analyst Skill)</h2>
 <br>
-<h2>Finding 1: Apache Tomcat Ghostcat (Web/App Category)</h2>
+<h3>Finding 1: Apache Tomcat Ghostcat (Web/App Category)</h3>
 <br>
 CVE ID: CVE-2020-1938
 <br>
@@ -65,24 +65,58 @@ Context & Exploitation Decision:
 
 <br>
 
-<h2>Finding 2: Samba Badlock Vulnerability (Service Category)</h2>
+<h3>Finding 2: Samba Badlock Vulnerability (Service Category)</h3>
 
 <br>
+CVE ID: CVE-2016-2118
 <br>
+CVSS Base Score: 7.5 (High)
 <br>
+CVSS Vector String: CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N
 <br>
+
+- Attack Vector (AV): Network (AV:N) — Probed over standard network pathways.
+- Attack Complexity (AC): High (AC:H) — Requires precise execution timing or a Man-in-the-Middle position.
+- User Interaction (UI): Required (UI:R) — An actual user needs to interact or create server traffic for this vulnerability to link up.
+
 <br>
+CWE Mapping: CWE-200 (Exposure of Sensitive Information)
 <br>
+Context & Exploitation Decision:
 <br>
+
+- Is the service running & port reachable? Yes, Samba is listening on port 445
+- Conclusion: Not Exploitable in this environment. Even though the port is reachable, the High Complexity (AC:H) combined with User Interaction Required (UI:R) means it's dead in the water inside an isolated sandbox lab where no actual system users are triggering network traffic.
+
 <br>
+
+<h3>Finding 3: SSL DROWN Attack Vulnerability (Crypto Category)</h3>
+
 <br>
+CVE ID: CVE-2016-0800
 <br>
+CVSS Base Score: 5.9 (Medium)
 <br>
+CVSS Vector String: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
 <br>
+
+- Attack Vector (AV): Network (AV:N) — Targets the internet/network protocol socket.
+- Attack Complexity (AC): High (AC:H) — Requires specialized math tools to decode the Bleichenbacher RSA padding oracle and decrypt text.
+- User Interaction (UI): None (UI:N) — No victim behavior required to make the server perform the mathematical computations.
+
 <br>
+CWE Mapping: CWE-327 (Use of a Broken or Risky Cryptographic Algorithm).
 <br>
+Context & Exploitation Decision:
 <br>
+
+- Is the service running & port reachable? Yes, the flawed protocol is active on port 25
+- Conclusion: Not Likely Exploitable in this environment. While it doesn't need an active victim interaction (UI:N), a DROWN attack demands an incredible amount of intercepted ciphertext and computational overhead to successfully decrypt data. For a basic penetration assessment environment, you don't have the active TLS data stream required to make this realistic.
+
 <br>
+
+<h2>Lab 3 (Real-World Exercise)</h2>
+
 <br>
 <br>
 <br>
