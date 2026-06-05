@@ -25,6 +25,7 @@ Metasploitable2 | 10.0.2.15
 <img width="1721" height="704" alt="image" src="https://github.com/user-attachments/assets/143aa24a-0287-41af-bb59-af712a22062c" />
 <br>
 <br>
+
 | No | Vulnerability Name | CVSS Score | Severity |
 -----|--------------------|------------|----------|
 |  1  |        Canonical Ubuntu Linux SEoL (8.04.x)            |      10.0      |     CRITICAL     |
