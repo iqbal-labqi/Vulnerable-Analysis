@@ -33,3 +33,9 @@ Metasploitable2 | 10.0.2.15
 |3|Apache Tomcat AJP Connector Request Injection (Ghostcat)|CVE-2020-1745, CVE-2020-1938|9.8|8009|CRITICAL|
 |4|SSL Version 2 and 3 Protocol Detection|None|9.8|25, 5432|CRITICAL|
 |5|Bind Shell Backdoor Detection|None|9.8|1524|CRITICAL|
+
+<br>
+<br>
+
+<h1>Lab 2 (Core Analyst Skill)</h1>
+<br>
