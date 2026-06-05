@@ -40,3 +40,39 @@ Metasploitable2 | 10.0.2.15
 
 <h1>Lab 2 (Core Analyst Skill)</h1>
 <br>
+<h2>Finding 1: Apache Tomcat Ghostcat (Web/App Category)</h2>
+<br>
+CVE ID: CVE-2020-1938
+<br>
+CVSS Base Score: 9.8 (Critical)
+<br>
+CVSS Vector String: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+- Attack Vector (AV): Network (AV:N) — The vulnerability can be exploited remotely across a network line.
+- Privileges Required (PR): None (PR:N) — No authenticating username or password is required from the attacker.
+- User Interaction (UI): None (UI:N) — It runs completely quietly without needing a victim to click or trigger anything.
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
