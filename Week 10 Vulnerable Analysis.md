@@ -28,8 +28,8 @@ Metasploitable2 | 10.0.2.15
 
 | No | Vulnerability Name |CVE| CVSS Score| Affected port/service | Severity |
 -----|--------------------|---|-----------|-----------------------|----------|
-|  1 |Canonical Ubuntu Linux SEoL (8.04.x)||10.0||CRITICAL|
-|2|VNC Server 'password' Password||10.0||CRITICAL|
-|3|Apache Tomcat AJP Connector Request Injection (Ghostcat)||9.8||CRITICAL|
+|  1 |Canonical Ubuntu Linux SEoL (8.04.x)|None|10.0|80|CRITICAL|
+|2|VNC Server 'password' Password|None|10.0|5900|CRITICAL|
+|3|Apache Tomcat AJP Connector Request Injection (Ghostcat)|CVE-2020-1745, CVE-2020-1938|9.8|8009|CRITICAL|
 |4|SSL Version 2 and 3 Protocol Detection||9.8||CRITICAL|
 |5|Bind Shell Backdoor Detection||9.8||CRITICAL|
