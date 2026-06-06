@@ -1,5 +1,5 @@
 <h2>Lab 1 (Foundation)</h2>
----------------------------
+
 
 *Machine Info*
 
