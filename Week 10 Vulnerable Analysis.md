@@ -40,6 +40,9 @@ Metasploitable2 | 10.0.2.15
 
 <h2>Lab 2 (Core Analyst Skill)</h2>
 <br>
+<img width="1910" height="849" alt="image" src="https://github.com/user-attachments/assets/137bd380-90c4-463a-8956-1dc6d1db30eb" />
+
+<br>
 <h3>Vulnerability 1: Apache Tomcat Ghostcat (Web/App Category)</h3>
 <br>
 CVE ID: CVE-2020-1938
