@@ -132,4 +132,62 @@ Command used: nmap --script ssl-enum-ciphers -p 25 10.0.2.15
 |Nessus's automated engine flagged that weak SSL/TLS ciphers were being offered on port 25. However, when you manually validated it using Nmap's ssl-enum-ciphers script, the target did not return any cipher suite configurations.|False Positive (FP)|The manual validation script failed to enumerate any active SSL/TLS handshake configurations on port 25. Because the service (SMTP) is running in plaintext and completely refused to negotiate an encrypted session, the scanner's alert about weak encryption algorithms is inaccurate.|
  
 <br>
+<h3>Scenario 2: Open Port with No Auth</h3>
+<br>
+Command used: nc -nv 10.0.2.15 1524
+<br>
+<img width="691" height="325" alt="image" src="https://github.com/user-attachments/assets/9ea70415-74df-421f-b1de-960f708f97e6" />
+<br>
+<b>Analysis</b>
+<br>
+
+|Description|Verdict|Reasoning|
+|-----------|-------|---------|
+|Nessus reported a Bind Shell backdoor operating without authentication rules on port 1524. You verified this manually by pointing a raw Netcat socket directly at the target interface.|True Positive (TP)|Running nc -nv 10.0.2.15 1524 successfully established a direct TCP socket channel. The target machine immediately processed and returned an unauthenticated, interactive command execution shell environment. Running systemic verification commands like ip a successfully printed internal interface details directly from root privileges, verifying that the asset completely lacks access authentication boundaries.|
+
+<br>
+<h3>Scenario 3: Outdated Service</h3>
+<br>
+Command used: curl -I http://10.0.2.15:8180/
+<br>
+<img width="393" height="182" alt="image" src="https://github.com/user-attachments/assets/85b822ce-3cf2-473c-bfb1-e339530780af" />
+<br>
+<b>Analysis</b>
+<br>
+|Description|Verdict|Reasoning|
+|-----------|-------|---------|
+|Nessus flagged an outdated Java/Tomcat web server service operating on the host machine. You verified this manually by querying the web port headers via curl.|True Positive (TP)|Running curl -I http://10.0.2.15:8180/ triggered an HTTP HEAD request. The target application responded with an explicit banner signature identifying itself as Apache-Coyote/1.1. This specific version string contains well-documented, unpatched vulnerabilities (including vulnerability components tied to the Ghostcat exploit track), proving the scanner's version assessment is correct.|
+<br>
+<br>
+<h3>Summary</h3>
+<br>
+
+|Scenario|Target Port|Manual Verification Tool|Verdict|Proof|
+|--------|-----------|------------------------|-------|-----|
+|SSL Weak Cipher|Port 25|nmap --script ssl-enum-ciphers|False Positive (FP)|Nmap returned absolutely zero cryptographic cipher suites; the service operates in plaintext.|
+|No Auth Open Port|Port 1524|nc -nv|True Positive (TP)|Netcat instantly opened an interactive root shell channel without asking for a password.|
+|Outdated Service|Port 8180|curl -I|True Positive (TP)|Server response headers explicitly disclosed the legacy Apache-Coyote/1.1 version banner.|
+
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
