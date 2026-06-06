@@ -129,7 +129,7 @@ Command used: nmap --script ssl-enum-ciphers -p 25 10.0.2.15
 
 |Description|Verdict|Reasoning|
 |-----------|-------|---------|
-|Nessus's automated engine flagged that weak SSL/TLS ciphers were being offered on port 25. However, when you manually validated it using Nmap's ssl-enum-ciphers script, the target did not return any cipher suite configurations.|False Positive (FP)|The manual validation script failed to enumerate any active SSL/TLS handshake configurations on port 25. Because the service (SMTP) is running in plaintext and completely refused to negotiate an encrypted session, the scanner's alert about weak encryption algorithms is inaccurate.|
+|Nessus's automated engine flagged that weak SSL/TLS ciphers were being offered on port 25. However, when manually validated it using Nmap's ssl-enum-ciphers script, the target did not return any cipher suite configurations.|False Positive (FP)|The manual validation script failed to enumerate any active SSL/TLS handshake configurations on port 25. Because the service (SMTP) is running in plaintext and completely refused to negotiate an encrypted session, the scanner's alert about weak encryption algorithms is inaccurate.|
  
 <br>
 <h3>Scenario 2: Open Port with No Auth</h3>
@@ -143,7 +143,7 @@ Command used: nc -nv 10.0.2.15 1524
 
 |Description|Verdict|Reasoning|
 |-----------|-------|---------|
-|Nessus reported a Bind Shell backdoor operating without authentication rules on port 1524. You verified this manually by pointing a raw Netcat socket directly at the target interface.|True Positive (TP)|Running nc -nv 10.0.2.15 1524 successfully established a direct TCP socket channel. The target machine immediately processed and returned an unauthenticated, interactive command execution shell environment. Running systemic verification commands like ip a successfully printed internal interface details directly from root privileges, verifying that the asset completely lacks access authentication boundaries.|
+|Nessus reported a Bind Shell backdoor operating without authentication rules on port 1524. Verified this manually by pointing a raw Netcat socket directly at the target interface.|True Positive (TP)|Running nc -nv 10.0.2.15 1524 successfully established a direct TCP socket channel. The target machine immediately processed and returned an unauthenticated, interactive command execution shell environment. Running systemic verification commands like ip a successfully printed internal interface details directly from root privileges, verifying that the asset completely lacks access authentication boundaries.|
 
 <br>
 <h3>Scenario 3: Outdated Service</h3>
@@ -154,9 +154,11 @@ Command used: curl -I http://10.0.2.15:8180/
 <br>
 <b>Analysis</b>
 <br>
+
 |Description|Verdict|Reasoning|
 |-----------|-------|---------|
-|Nessus flagged an outdated Java/Tomcat web server service operating on the host machine. You verified this manually by querying the web port headers via curl.|True Positive (TP)|Running curl -I http://10.0.2.15:8180/ triggered an HTTP HEAD request. The target application responded with an explicit banner signature identifying itself as Apache-Coyote/1.1. This specific version string contains well-documented, unpatched vulnerabilities (including vulnerability components tied to the Ghostcat exploit track), proving the scanner's version assessment is correct.|
+|Nessus flagged an outdated Java/Tomcat web server service operating on the host machine. Verified this manually by querying the web port headers via curl.|True Positive (TP)|Running curl -I http://10.0.2.15:8180/ triggered an HTTP HEAD request. The target application responded with an explicit banner signature identifying itself as Apache-Coyote/1.1. This specific version string contains well-documented, unpatched vulnerabilities (including vulnerability components tied to the Ghostcat exploit track), proving the scanner's version assessment is correct.|
+
 <br>
 <br>
 <h3>Summary</h3>
