@@ -218,7 +218,5 @@ This low-severity issue allows an attacker to map system uptime patterns simply 
 <br>
 <h3>WHY a Medium CVSS may be more dangerous than a High CVSS?</h3>
 <br>
-  A CVSS score only calculates theoretical vulnerability factors in a vacuum. A High CVSS vulnerability might be practically useless to an attacker if it targets an internal backend service that is tightly locked behind network segmentations and demands complex human victim actions.<br>
-
-  Conversely, a Medium CVSS vulnerability—such as an open web application vulnerability that lacks access control limitations—can be significantly more dangerous because it sits entirely exposed to the public internet, letting anyone exploit it remotely with zero operational hurdles.
+A CVSS score only calculates theoretical vulnerability factors in a vacuum. A High CVSS vulnerability might be practically useless to an attacker if it targets an internal backend service that is tightly locked behind network segmentations and demands complex human victim actions. Conversely, a Medium CVSS vulnerability—such as an open web application vulnerability that lacks access control limitations—can be significantly more dangerous because it sits entirely exposed to the public internet, letting anyone exploit it remotely with zero operational hurdles.
 <br>
