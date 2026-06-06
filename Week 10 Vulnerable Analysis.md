@@ -182,28 +182,28 @@ Command used: curl -I http://10.0.2.15:8180/
 <br>
 <h3>Scoring Table</h3>
 <br>
-<h2>Apache Tomcat Ghostcat (CVE-2020-1938)</h2>
+<h4>Apache Tomcat Ghostcat (CVE-2020-1938)</h4>
 <br>
 Risk Calculation: Exploitability (5) * Impact (5) * Exposure (5) = 125
 <br>
 This flaw allows an unauthenticated remote attacker to read arbitrary files and execute malicious code via the exposed AJP port 8009. Because a working public exploit script exists and requires no valid credentials or user interaction, it represents an immediate threat to the environment.
 <br>
 <br>
-<h2>Samba Badlock Vulnerability (CVE-2016-2118)</h2>
+<h4>Samba Badlock Vulnerability (CVE-2016-2118)</h4>
 <br>
 Risk Calculation: Exploitability (2) * Impact (4) * Exposure (5) = 40
 <br>
 While the SMB service is wide open to our Kali network, executing this exploit requires a sophisticated Man-in-the-Middle position and active network traffic manipulation. Because our isolated lab lacks authenticating target users generating active traffic, the actual likelihood of successful exploitation is very low.
 <br>
 <br>
-<h2>SSL Anonymous Cipher Suites Supported (CVE-2007-1858)</h2>
+<h4>SSL Anonymous Cipher Suites Supported (CVE-2007-1858)</h4>
 <br>
 Risk Calculation: Exploitability (2) * Impact (3) * Exposure (5) = 30
 <br>
 This configuration flaw allows data to be sent across the network completely unencrypted over port 25. An attacker can intercept and read confidential system traffic using basic packet-sniffing tools. However, its real-world impact is limited because it does not grant direct administrative control over the underlying operating system.
 <br>
 <br>
-<h2>ICMP Timestamp Request Remote Date Disclosure (CVE-1999-0524)</h2>
+<h4>ICMP Timestamp Request Remote Date Disclosure (CVE-1999-0524)</h4>
 <br>
 Risk Calculation: Exploitability (5) * Impact (1) * Exposure (5) = 25
 <br>
