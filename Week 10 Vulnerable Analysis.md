@@ -118,8 +118,18 @@ Context & Exploitation Decision:
 <h2>Lab 3 (Real-World Exercise)</h2>
 
 <br>
+<h3>Scenario 1: SSL Weak Cipher</h3>
 <br>
+Command used: nmap --script ssl-enum-ciphers -p 25 10.0.2.15
 <br>
+<img width="608" height="211" alt="image" src="https://github.com/user-attachments/assets/d781778e-df3d-4b03-b0ad-fc2dea13b3b6" />
 <br>
+<b>Analysis</b>
+<br>
+
+|Description|Verdict|Reasoning|
+|-----------|-------|---------|
+|Nessus's automated engine flagged that weak SSL/TLS ciphers were being offered on port 25. However, when you manually validated it using Nmap's ssl-enum-ciphers script, the target did not return any cipher suite configurations.|False Positive (FP)|The manual validation script failed to enumerate any active SSL/TLS handshake configurations on port 25. Because the service (SMTP) is running in plaintext and completely refused to negotiate an encrypted session, the scanner's alert about weak encryption algorithms is inaccurate.|
+ 
 <br>
 <br>
