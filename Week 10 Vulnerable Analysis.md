@@ -41,7 +41,7 @@ Metasploitable2 | 10.0.2.15
 
 <h2>Lab 2 (Core Analyst Skill)</h2>
 <br>
-<h3>Finding 1: Apache Tomcat Ghostcat (Web/App Category)</h3>
+<h3>Vulnerability 1: Apache Tomcat Ghostcat (Web/App Category)</h3>
 <br>
 CVE ID: CVE-2020-1938
 <br>
@@ -65,7 +65,7 @@ Context & Exploitation Decision:
 
 <br>
 
-<h3>Finding 2: Samba Badlock Vulnerability (Service Category)</h3>
+<h3>Vulnerability 2: Samba Badlock Vulnerability (Service Category)</h3>
 
 <br>
 CVE ID: CVE-2016-2118
@@ -90,7 +90,7 @@ Context & Exploitation Decision:
 
 <br>
 
-<h3>Finding 3: SSL DROWN Attack Vulnerability (Crypto Category)</h3>
+<h3>Vulnerability 3: SSL DROWN Attack Vulnerability (Crypto Category)</h3>
 
 <br>
 CVE ID: CVE-2016-0800
