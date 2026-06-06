@@ -1,4 +1,4 @@
-<h1>Vulnerable Analysis Week 10</h1>
+<img width="931" height="407" alt="image" src="https://github.com/user-attachments/assets/6117bc1c-93e8-4d18-ad9c-bb25170179eb" /><h1>Vulnerable Analysis Week 10</h1>
 <h2>Lab 1 (Foundation)</h2>
 ---------------------------
 
@@ -171,6 +171,7 @@ Command used: curl -I http://10.0.2.15:8180/
 |Outdated Service|Port 8180|curl -I|True Positive (TP)|Server response headers explicitly disclosed the legacy Apache-Coyote/1.1 version banner.|
 
 <br>
+<h3>Scenario 3: Outdated Service</h3>
 <br>
 <br>
 
