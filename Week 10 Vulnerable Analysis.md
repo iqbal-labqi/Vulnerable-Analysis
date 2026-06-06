@@ -1,4 +1,3 @@
-<img width="931" height="407" alt="image" src="https://github.com/user-attachments/assets/6117bc1c-93e8-4d18-ad9c-bb25170179eb" /><h1>Vulnerable Analysis Week 10</h1>
 <h2>Lab 1 (Foundation)</h2>
 ---------------------------
 
