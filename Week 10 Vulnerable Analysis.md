@@ -203,6 +203,13 @@ Risk Calculation: Exploitability (2) * Impact (3) * Exposure (5) = 30
 This configuration flaw allows data to be sent across the network completely unencrypted over port 25. An attacker can intercept and read confidential system traffic using basic packet-sniffing tools. However, its real-world impact is limited because it does not grant direct administrative control over the underlying operating system.
 <br>
 <br>
+<h4>SSL DROWN Attack Vulnerability (CVE-2016-0800)</h4>
+<br>
+Risk Calculation: Exploitability (1) $\times$ Impact (4) $\times$ Exposure (5) = 20
+<br>
+Bypassing this encryption standard allows an attacker to break down secure communications and expose sensitive keys. However, the attack complexity is extremely high, demanding enormous amounts of computational processing power and ciphertext capturing. This massive technical barrier drops its immediate operational threat down to a minimum level.
+<br>
+<br>
 <h4>ICMP Timestamp Request Remote Date Disclosure (CVE-1999-0524)</h4>
 <br>
 Risk Calculation: Exploitability (5) * Impact (1) * Exposure (5) = 25
