@@ -181,40 +181,44 @@ Command used: curl -I http://10.0.2.15:8180/
 <br>
 <h3>Scoring Table</h3>
 <br>
-<h4>Apache Tomcat Ghostcat (CVE-2020-1938)</h4>
+<h4>1. Apache Tomcat Ghostcat (CVE-2020-1938)</h4>
 <br>
 Risk Calculation: Exploitability (5) * Impact (5) * Exposure (5) = 125
 <br>
 This flaw allows an unauthenticated remote attacker to read arbitrary files and execute malicious code via the exposed AJP port 8009. Because a working public exploit script exists and requires no valid credentials or user interaction, it represents an immediate threat to the environment.
 <br>
 <br>
-<h4>Samba Badlock Vulnerability (CVE-2016-2118)</h4>
+<h4>2. Samba Badlock Vulnerability (CVE-2016-2118)</h4>
 <br>
 Risk Calculation: Exploitability (2) * Impact (4) * Exposure (5) = 40
 <br>
 While the SMB service is wide open to our Kali network, executing this exploit requires a sophisticated Man-in-the-Middle position and active network traffic manipulation. Because our isolated lab lacks authenticating target users generating active traffic, the actual likelihood of successful exploitation is very low.
 <br>
 <br>
-<h4>SSL Anonymous Cipher Suites Supported (CVE-2007-1858)</h4>
+<h4>3. SSL Anonymous Cipher Suites Supported (CVE-2007-1858)</h4>
 <br>
 Risk Calculation: Exploitability (2) * Impact (3) * Exposure (5) = 30
 <br>
 This configuration flaw allows data to be sent across the network completely unencrypted over port 25. An attacker can intercept and read confidential system traffic using basic packet-sniffing tools. However, its real-world impact is limited because it does not grant direct administrative control over the underlying operating system.
 <br>
 <br>
-<h4>SSL DROWN Attack Vulnerability (CVE-2016-0800)</h4>
+<h4>4. SSL DROWN Attack Vulnerability (CVE-2016-0800)</h4>
 <br>
 Risk Calculation: Exploitability (1) * Impact (4) * Exposure (5) = 20
 <br>
 Bypassing this encryption standard allows an attacker to break down secure communications and expose sensitive keys. However, the attack complexity is extremely high, demanding enormous amounts of computational processing power and ciphertext capturing. This massive technical barrier drops its immediate operational threat down to a minimum level.
 <br>
 <br>
-<h4>ICMP Timestamp Request Remote Date Disclosure (CVE-1999-0524)</h4>
+<h4>5. ICMP Timestamp Request Remote Date Disclosure (CVE-1999-0524)</h4>
 <br>
 Risk Calculation: Exploitability (5) * Impact (1) * Exposure (5) = 25
 <br>
 This low-severity issue allows an attacker to map system uptime patterns simply by transmitting an ICMP packet request. While trivially simple to perform, the information disclosed lacks critical context and cannot be directly leveraged to harm the asset. It remains a low-priority remediation concern.
 <br>
 <br>
+<h3>WHY a Medium CVSS may be more dangerous than a High CVSS?</h3>
 <br>
+  A CVSS score only calculates theoretical vulnerability factors in a vacuum. A High CVSS vulnerability might be practically useless to an attacker if it targets an internal backend service that is tightly locked behind network segmentations and demands complex human victim actions.<br>
+
+  Conversely, a Medium CVSS vulnerability—such as an open web application vulnerability that lacks access control limitations—can be significantly more dangerous because it sits entirely exposed to the public internet, letting anyone exploit it remotely with zero operational hurdles.
 <br>
