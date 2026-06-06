@@ -173,6 +173,13 @@ Command used: curl -I http://10.0.2.15:8180/
 <br>
 <h3>Scenario 3: Outdated Service</h3>
 <br>
+
+Risk Matrix
+<br>
+<br>
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/a1cff244-708d-4f08-bd6a-20d949a43943" />
+
+
 <br>
 
 <br>
