@@ -205,7 +205,7 @@ This configuration flaw allows data to be sent across the network completely une
 <br>
 <h4>SSL DROWN Attack Vulnerability (CVE-2016-0800)</h4>
 <br>
-Risk Calculation: Exploitability (1) $\times$ Impact (4) $\times$ Exposure (5) = 20
+Risk Calculation: Exploitability (1) * Impact (4) * Exposure (5) = 20
 <br>
 Bypassing this encryption standard allows an attacker to break down secure communications and expose sensitive keys. However, the attack complexity is extremely high, demanding enormous amounts of computational processing power and ciphertext capturing. This massive technical barrier drops its immediate operational threat down to a minimum level.
 <br>
